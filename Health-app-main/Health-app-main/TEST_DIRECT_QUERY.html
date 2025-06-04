@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Doctor Profiles</title>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    button { padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    #results { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Test Doctor Profiles Query</h1>
+  
+  <button onclick="testDirectQuery()">Test Direct Query</button>
+  <button onclick="testJoinQuery()">Test Join Query</button>
+  <button onclick="testUsersQuery()">Test Users Query</button>
+  <button onclick="testPolicies()">Test Policies</button>
+  
+  <div id="results">
+    <h3>Results:</h3>
+    <pre id="output">Click a button to run a test...</pre>
+  </div>
+
+  <script>
+    // Initialize Supabase client
+    const supabaseUrl = 'https://your-supabase-url.supabase.co';
+    const supabaseKey = 'your-supabase-anon-key';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Test direct query to doctor_profiles table
+    async function testDirectQuery() {
+      const output = document.getElementById('output');
+      output.innerText = 'Running direct query...';
+      
+      try {
+        const { data, error } = await supabase
+          .from('doctors')
+          .select('*');
+          
+        if (error) {
+          output.innerText = `Error: ${error.message}\n${JSON.stringify(error, null, 2)}`;
+        } else {
+          output.innerText = `Success! Found ${data.length} doctor profiles:\n${JSON.stringify(data, null, 2)}`;
+        }
+      } catch (err) {
+        output.innerText = `Exception: ${err.message}`;
+      }
+    }
+    
+    // Test join query between doctor_profiles and users
+    async function testJoinQuery() {
+      const output = document.getElementById('output');
+      output.innerText = 'Running join query...';
+      
+      try {
+        const { data, error } = await supabase
+          .from('doctors')
+          .select(`
+            id,
+            user_id,
+            license_number,
+            bio,
+            users(id, full_name, email)
+          `);
+          
+        if (error) {
+          output.innerText = `Error: ${error.message}\n${JSON.stringify(error, null, 2)}`;
+        } else {
+          output.innerText = `Success! Found ${data.length} doctor profiles with user data:\n${JSON.stringify(data, null, 2)}`;
+        }
+      } catch (err) {
+        output.innerText = `Exception: ${err.message}`;
+      }
+    }
+    
+    // Test query to users table for doctors
+    async function testUsersQuery() {
+      const output = document.getElementById('output');
+      output.innerText = 'Running users query...';
+      
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('id, full_name, email, role')
+          .eq('role', 'DOCTOR');
+          
+        if (error) {
+          output.innerText = `Error: ${error.message}\n${JSON.stringify(error, null, 2)}`;
+        } else {
+          output.innerText = `Success! Found ${data.length} doctors in users table:\n${JSON.stringify(data, null, 2)}`;
+        }
+      } catch (err) {
+        output.innerText = `Exception: ${err.message}`;
+      }
+    }
+    
+    // Test getting RLS policies
+    async function testPolicies() {
+      const output = document.getElementById('output');
+      output.innerText = 'Checking policies - this might not work via client API...';
+      
+      try {
+        const { data, error } = await supabase
+          .from('pg_policies')
+          .select('*')
+          .eq('tablename', 'doctors');
+          
+        if (error) {
+          output.innerText = `Error accessing policies: ${error.message}\n${JSON.stringify(error, null, 2)}`;
+        } else {
+          output.innerText = `Policies: ${JSON.stringify(data, null, 2)}`;
+        }
+      } catch (err) {
+        output.innerText = `Exception: ${err.message}`;
+      }
+    }
+  </script>
+  
+  <div style="margin-top: 20px; font-size: 0.8em; color: #666;">
+    <p><strong>Note:</strong> You need to update the supabaseUrl and supabaseKey values in the script with your actual Supabase credentials.</p>
+  </div>
+</body>
+</html> 

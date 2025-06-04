@@ -1,0 +1,123 @@
+/* Purple Theme Utility Classes */
+
+/* Background Colors */
+.bg-purple-gradient {
+  background-image: linear-gradient(to right, #8b5cf6, #7c3aed);
+}
+
+.bg-purple-gradient-vertical {
+  background-image: linear-gradient(to bottom, #8b5cf6, #7c3aed);
+}
+
+.bg-purple-light {
+  background-color: #f5f3ff;
+}
+
+.bg-purple-dark {
+  background-color: #4c1d95;
+}
+
+/* Text Colors */
+.text-purple {
+  color: #7c3aed;
+}
+
+.text-purple-dark {
+  color: #4c1d95;
+}
+
+.text-purple-light {
+  color: #a78bfa;
+}
+
+/* Border Colors */
+.border-purple {
+  border-color: #7c3aed;
+}
+
+.border-purple-light {
+  border-color: #c4b5fd;
+}
+
+/* Special Components */
+.purple-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.05), 0 2px 4px -1px rgba(124, 58, 237, 0.03);
+  transition: all 0.2s ease-in-out;
+}
+
+.purple-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.purple-button {
+  background-image: linear-gradient(to right, #8b5cf6, #7c3aed);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.purple-button:hover {
+  background-image: linear-gradient(to right, #7c3aed, #6d28d9);
+  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.25);
+}
+
+.purple-input {
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.purple-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Badge styles */
+.purple-badge {
+  background-color: #7c3aed;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.purple-badge-outline {
+  background-color: transparent;
+  color: #7c3aed;
+  border: 1px solid #7c3aed;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Section styles */
+.purple-section-title {
+  color: #4c1d95;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.purple-section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #7c3aed;
+  border-radius: 4px;
+} 

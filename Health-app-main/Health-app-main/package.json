@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^7.0.2",
+    "@react-google-maps/api": "^2.20.6",
+    "@supabase/supabase-js": "^2.49.8",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "framer-motion": "^12.9.4",
+    "jspdf": "^3.0.1",
+    "jwt-decode": "^4.0.0",
+    "recharts": "^2.15.3"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.58.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

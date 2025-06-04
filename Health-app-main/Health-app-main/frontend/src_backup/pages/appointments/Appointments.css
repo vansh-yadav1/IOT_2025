@@ -1,0 +1,105 @@
+.appointments-container {
+  padding: 24px;
+}
+
+.page-title {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.filter-paper {
+  margin-bottom: 16px;
+}
+
+/* Calendar Styles */
+.calendar-container {
+  height: 75vh;
+  padding: 16px;
+}
+
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-event {
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Appointment Details Styles */
+.appointment-details-card {
+  margin-bottom: 16px;
+}
+
+.appointment-info-section {
+  margin-bottom: 16px;
+}
+
+.appointment-info-item {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.appointment-info-label {
+  font-weight: 500;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* New Appointment Form Styles */
+.form-section {
+  margin-bottom: 24px;
+}
+
+.form-section-title {
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #3498db;
+}
+
+/* Appointment Details Page */
+.appointment-status {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .appointments-container {
+    padding: 16px;
+  }
+  
+  .appointment-info-item {
+    flex-direction: column;
+  }
+  
+  .appointment-info-label {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  .appointment-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .appointment-actions button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+} 

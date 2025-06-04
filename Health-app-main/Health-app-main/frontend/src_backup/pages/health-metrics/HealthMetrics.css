@@ -1,0 +1,267 @@
+.health-dashboard-container {
+  padding: 2rem 1rem;
+  max-width: 1400px !important;
+}
+
+.health-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.health-summary-cards {
+  margin-bottom: 24px;
+}
+
+.health-summary-card {
+  height: 100%;
+}
+
+.summary-card-content {
+  display: flex;
+  align-items: center;
+}
+
+.summary-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+  color: white;
+}
+
+.heart-icon {
+  background-color: #e91e63;
+}
+
+.blood-icon {
+  background-color: #1e88e5;
+}
+
+.oxygen-icon {
+  background-color: #43a047;
+}
+
+.temperature-icon {
+  background-color: #ff9800;
+}
+
+.summary-card-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.health-metrics-details {
+  margin-bottom: 24px;
+}
+
+.metrics-chart-container {
+  width: 100%;
+}
+
+.metrics-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.health-cta-container {
+  margin-top: 24px;
+}
+
+.health-cta {
+  padding: 24px;
+  text-align: center;
+}
+
+/* Health Data Entry Form */
+.health-entry-container {
+  padding: 24px;
+}
+
+.health-entry-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.health-entry-header {
+  margin-bottom: 24px;
+}
+
+.health-entry-card {
+  margin-bottom: 24px;
+}
+
+.health-entry-card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.health-entry-card-title .MuiSvgIcon-root {
+  margin-right: 8px;
+}
+
+.health-entry-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Health Metric Details */
+.metric-detail-container {
+  padding: 2rem 1rem;
+  max-width: 1200px !important;
+}
+
+.metric-detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.metric-filter-toolbar {
+  margin-bottom: 24px;
+}
+
+.metric-chart-container {
+  height: 400px;
+  margin-bottom: 24px;
+}
+
+.metric-table-container {
+  margin-top: 24px;
+}
+
+/* Metric Card Styles */
+.metric-card {
+  height: 100%;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+}
+
+.metric-value {
+  font-weight: 600;
+}
+
+.trend-up {
+  color: #4caf50;
+}
+
+.trend-down {
+  color: #f44336;
+}
+
+.chart-container {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+/* Data Entry Form Styles */
+.data-entry-container {
+  max-width: 700px !important;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.metric-detail-icon {
+  margin-right: 1rem;
+  width: 48px;
+  height: 48px;
+}
+
+.detail-card {
+  margin-bottom: 1.5rem;
+}
+
+.readings-table {
+  margin-top: 2rem;
+}
+
+.range-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-settings {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.metrics-chart {
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .health-dashboard-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .health-dashboard-header,
+  .health-entry-header,
+  .metric-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .health-entry-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .health-entry-actions button {
+    width: 100%;
+  }
+  
+  .range-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .metrics-chart {
+    height: 300px;
+  }
+} 

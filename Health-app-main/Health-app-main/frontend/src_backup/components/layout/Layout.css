@@ -1,0 +1,33 @@
+.drawer-header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #f8f9fa;
+  height: 64px;
+}
+
+/* Active/selected navigation item */
+.MuiListItemButton-root.Mui-selected {
+  background-color: rgba(52, 152, 219, 0.1) !important;
+}
+
+.MuiListItemButton-root.Mui-selected .MuiListItemIcon-root {
+  color: #3498db;
+}
+
+.MuiListItemButton-root.Mui-selected .MuiListItemText-primary {
+  font-weight: 500;
+  color: #3498db;
+}
+
+/* Override MUI styles for AppBar */
+.MuiAppBar-root {
+  background-color: #3498db !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .drawer-header {
+    height: 56px;
+  }
+} 
